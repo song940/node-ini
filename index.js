@@ -34,6 +34,28 @@ INI.stringify = function(input){
   }
   return output.join(INI.EOL);
 };
+/**
+ * [function parse]
+ * @param  {[type]} input [description]
+ * @return {[type]}       [description]
+ */
+INI.parse = function(input){
+  var output = {}, section;
+  input.split(/\r|\n/).filter(function(line){
+    return line && !/^[;|#]/ig.test(line);
+  }).forEach(function(line){
+    if(/^\[.*\]$/.test(line)){
+      section = line.replace(/\[|\]/g, '');
+    }else{
+      var kv = line.split('=');
+      (output[ section ] ||
+      (output[ section ] = {}))[
+          String(kv[0]).trim()
+      ] = String(kv[1]).trim();
+    }
+  });
+  return output;
+};
 
 /**
  * [exports description]
