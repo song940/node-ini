@@ -1,0 +1,22 @@
+{
+  "name": "node-ini",
+  "version": "1.0.0",
+  "description": "simple ini encoder/decoder ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/song940/node-ini.git"
+  },
+  "author": "lsong",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/song940/node-ini/issues"
+  },
+  "homepage": "https://github.com/song940/node-ini#readme",
+  "keywords": [
+    "ini"
+  ]
+}
