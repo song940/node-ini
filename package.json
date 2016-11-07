@@ -1,5 +1,5 @@
 {
-  "name": "node-ini",
+  "name": "ini2",
   "version": "1.0.0",
   "description": "simple ini encoder/decoder ",
   "main": "index.js",

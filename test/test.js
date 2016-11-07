@@ -1,13 +1,17 @@
-const fs  = require('fs');
-const INI = require('..');
+const fs     = require('fs');
+const assert = require('assert');
+const INI    = require('..');
 
-// console.log(INI.stringify({
-//   a: {
-//     b:1
-//   },
-//   c: {
-//     d: [1,2,3,4]
-//   }
-// }));
-
-INI.parse(fs.readFileSync('./test/test.ini', 'utf8'))
+describe('INI', function(){
+  
+  it('INI.parse', function(){
+    
+    var obj = new INI('./test/test.ini');
+    
+    assert.equal('LIU SONG', obj.user.name);
+    assert.equal('song940@gmail.com', obj.user.email);
+    assert.equal('checkout', obj.alias.co);
+    
+  });
+  
+})

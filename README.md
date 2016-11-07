@@ -1,16 +1,18 @@
-## node-ini
+## node-ini 
 
-simple ini encoder/decoder
+[![Build Status](https://travis-ci.org/song940/node-ini.svg?branch=master)](https://travis-ci.org/song940/node-ini)
+
+> simple ini encoder/decoder
 
 ### Installation
 
 ```bash
-$ npm install ini --save
+$ npm install ini2 --save
 ```
 
 ### Example
 ```js
-const INI = require('ini');
+const INI = require('ini2');
 
 console.log(INI.stringify({
   a: {

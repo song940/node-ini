@@ -1,10 +1,23 @@
+'use strict';
+const fs = require('fs');
 /**
  * [INI description]
  * @param {[type]} obj [description]
  * @wiki https://en.wikipedia.org/wiki/INI_file
  */
-function INI(obj){
+function INI(options){
+  if(typeof options === 'string'){
+    var obj = INI.parse(fs.readFileSync(options, 'utf8'));
+    for(var k in obj) this[ k ] = obj[ k ];
+  }
+  if(typeof options === 'object'){
+    this.obj = options;
+  }
   return this;
+};
+
+INI.prototype.toString = function() {
+  return INI.stringify(this.obj);
 };
 /**
  * [EOL end of line]
